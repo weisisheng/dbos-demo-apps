@@ -4,9 +4,11 @@
   "description": "Simple functions",
   "scripts": {
     "build": "tsc",
-    "test": "jest --detectOpenHandles",
+    "test": "npx dbos rollback && npx dbos migrate && jest",
     "lint": "eslint src",
-    "lint-fix": "eslint --fix src"
+    "lint-fix": "eslint --fix src",
+    "dev": "nodemon",
+    "start": "npx dbos start"
   },
   "author": "",
   "license": "ISC",

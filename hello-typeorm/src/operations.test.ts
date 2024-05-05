@@ -7,11 +7,9 @@ describe("operations-test", () => {
 
   beforeAll(async () => {
     testRuntime = await createTestingRuntime([Hello]);
-    await testRuntime.createUserSchema();
   });
 
   afterAll(async () => {
-    await testRuntime.dropUserSchema();
     await testRuntime.destroy();
   });
 
