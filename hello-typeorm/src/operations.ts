@@ -1,14 +1,6 @@
 import { TransactionContext, HandlerContext, Transaction, GetApi, OrmEntities, DBOSDeploy, InitContext } from '@dbos-inc/dbos-sdk';
-import { Entity, EntityManager, PrimaryGeneratedColumn, Column } from "typeorm";
-
-@Entity("dboshello")
-export class DBOSHello {
-    @PrimaryGeneratedColumn()
-    greeting_id: number = 0;
-
-    @Column()
-    greeting: string = "greeting";
-} 
+import { EntityManager } from "typeorm";
+import { DBOSHello } from '../entities/DBOSHello';
 
 @OrmEntities([DBOSHello])
 export class Hello {
