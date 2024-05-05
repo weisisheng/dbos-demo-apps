@@ -13,20 +13,19 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@dbos-inc/dbos-cloud": "^1.7.6",
     "@dbos-inc/eslint-plugin": "^0.0.6",
     "@types/jest": "^29.5.12",
-    "@types/node": "^20.7.1",
+    "@types/node": "^20.12.8",
     "@types/supertest": "^6.0.2",
-    "eslint": "^8.56.0",
+    "eslint": "^8.57.0",
     "jest": "^29.7.0",
+    "nodemon": "^3.1.0",
     "supertest": "^7.0.0",
     "ts-jest": "^29.1.2",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.2.2"
+    "typescript": "^5.4.5"
   },
   "dependencies": {
     "@dbos-inc/dbos-sdk": "^1.7.6",
-    "typeorm": "^0.3.17"
+    "typeorm": "^0.3.20"
   }
 }
