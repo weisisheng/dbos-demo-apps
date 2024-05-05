@@ -1,28 +1,48 @@
-## Serverless Hello World Using TypeOrm
+# DBOS Hello with TypeORM
 
-A demo app for DBOS.
+This is a [DBOS app](https://docs.dbos.dev/) demonstrating how to use TypeORM.
 
-You need to use `npm install` to install the DBOS SDK package.
+## Getting Started
 
-```shell
-npm install
+Before you can launch your app, you need a database.
+DBOS works with any Postgres database, but to make things easier, we've provided a script that starts a Docker Postgres container and creates a database.
+Run:
+
+```bash
+node start_postgres_docker.js
 ```
 
-Then compile this app:
-```shell
+If successful, the script should print `Database started successfully!`.
+
+Next, build the app:
+
+```bash
 npm run build
 ```
-Update `dbos-config.yaml` to specify your database name.  The database must have been created prior to running this app, but tables will be created by TypeORM (via the method marked `@DBOSDeploy`).
 
-Finally, start the simple HTTP server:
-```shell
+Then, run a schema migration to create some tables:
+
+```bash
+npx dbos-sdk migrate
+```
+
+If successful, the migration should print `Migration successful!`.
+
+Finally, run the app:
+
+```bash
 npx dbos-sdk start
 ```
 
-It should print the output:
-```shell
+To see that it's working, visit this URL in your browser: [`http://localhost:3000/greeting/dbos`](http://localhost:3000/greeting/dbos).
+You should get this message: `Hello, dbos! You have been greeted 1 times.`
+Each time you refresh the page, the counter should go up by one!
 
-[DBOS Server]: Server is running at http://localhost:3000
-```
+Congratulations! You just launched a DBOS application.
 
-Now you can open your browser and type `http://localhost:3000/greeting/{name}` and see the output!
+## Next Steps
+
+- To add more functionality to this application, modify `src/operations.ts`, then rebuild and restart it. 
+- For a detailed tutorial, check out our [programming quickstart](https://docs.dbos.dev/getting-started/quickstart-programming).
+- To learn how to deploy your application to DBOS Cloud, visit our [cloud quickstart](https://docs.dbos.dev/getting-started/quickstart-cloud/)
+- To learn more about DBOS, take a look at [our documentation](https://docs.dbos.dev/) or our [source code](https://github.com/dbos-inc/dbos-transact).
